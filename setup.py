@@ -15,7 +15,7 @@ setup(
     license='BSD License',  # example license
     description='Additional views and helpers for django-rest-framework authentication',
     long_description=README,
-    url='http://www.example.com/',
+    url='https://github.com/INMAGIK/inmagik-drf-auth/',
     author='Mauro Bianchi',
     author_email='bianchimro@gmail.com',
     classifiers=[
