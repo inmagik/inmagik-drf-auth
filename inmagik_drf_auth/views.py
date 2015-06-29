@@ -6,6 +6,8 @@ from rest_framework.exceptions import APIException, AuthenticationFailed
 from rest_framework.authentication import SessionAuthentication, TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 
+
+
 class SessionLoginView(APIView):
     def post(self, request):
         if(request.user.id):
@@ -20,7 +22,7 @@ class SessionLoginView(APIView):
                     #login(request, user)
                     serializer = UserSerializer(user)
                     return Response(serializer.data)
-            
+
             raise AuthenticationFailed
 
         except:
@@ -29,9 +31,9 @@ class SessionLoginView(APIView):
 
 
 class CurrentUserView(APIView):
-    authentication_classes = (SessionAuthentication, )
+    authentication_classes = (TokenAuthentication, )
     permission_classes = (IsAuthenticated,)
 
-    def get(self, request):
-        
-        return Response({})
+    def get(self, request, format=None):
+        serializer = UserSerializer(request.user)
+        return Response(serializer.data)

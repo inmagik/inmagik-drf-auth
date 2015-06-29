@@ -9,7 +9,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='inmagik-drf-auth',
-    version='0.1',
+    version='0.1.1',
     packages=['inmagik_drf_auth'],
     include_package_data=True,
     license='BSD License',  # example license
